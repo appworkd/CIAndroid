@@ -15,9 +15,16 @@ jobs:
         with:
           java-version: 11
 
+      # Clean Project
+      - name: Clean Project
+        run: ./gradlew clean --stacktrace
 
       - name: Run Test
         run: ./gradlew test
 
       - name: Build Project
         run: ./gradlew assemble
+
+      - name: Stage Build Assemble
+        run: ./gradlew assembleStage
+
