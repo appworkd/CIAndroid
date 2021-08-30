@@ -28,3 +28,10 @@ jobs:
       - name: Stage Build Assemble
         run: ./gradlew assembleStage
 
+      - name: Stage Build Artifacts
+        uses: actions/upload-artifacts@v1
+        with:
+          name: Apk
+          path: app/build/outputs/apk/stage/app-stage-unsigned.apk
+          #path: app/build/outputs/apk/debug/app-debug
+
